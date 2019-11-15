@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin 
+    xmlns="http://www.phonegap.com/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    id="com.francis.ecatpaperless.databasepath" 
+    version="1.0.0">
+
+    <name>Database Path</name>
+
+    <js-module src="www/databasepath.js" name="DatabasePath">
+        <clobbers target="window.databasepath" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DatabasePath">
+                <param name="android-package" value="com.francis.ecatpaperless.databasepath.DatabasePath"/>            
+            </feature>
+        
+        </config-file>
+        <source-file src="src/android/DatabasePath.java" target-dir="src/com/francis/ecatpaperless/databasepath" />
+    </platform>
+</plugin>
